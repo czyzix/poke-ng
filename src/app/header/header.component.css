@@ -1,3 +1,73 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+}
+
+h1 {
+    color: rgb(68, 68, 68);
+    padding-left: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .poke-logo {
     width: 50px;
+    height: 50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    display: block;
+    margin: 0;
+    float: left;
+}
+
+li::after {
+    display: block;
+    content: '';
+    height: 5px;
+    width: 100%;
+}
+
+li.pokedex::after {
+    background-color: rgb(255, 102, 91);
+}
+
+li.about::after {
+    background-color: rgb(123, 132, 255);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: rgb(119, 119, 119);
+    padding: 20px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.pokedex a:hover {
+    background-color: rgb(255, 102, 91);
+}
+
+.about a:hover {
+    background-color: rgb(123, 132, 255);
 }
