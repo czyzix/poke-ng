@@ -1,5 +1,6 @@
-<div class="pokemon-grid">
-    <div class="pokemon-card" *ngFor="let pokemon of pokemons">
-        <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="pokemon">
+<div class="list-container">
+    <div class="pokemon-grid" >
+        <app-poke-card *ngFor="let pokemon of pokemons" [pokemonFullData]="pokemon"></app-poke-card>
     </div>
 </div>
+

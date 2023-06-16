@@ -23,8 +23,6 @@ export class PokeListComponent implements OnInit {
             
           })
       })})
-
-      console.log(this.pokemons)
   }
 
 }
