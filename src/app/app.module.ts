@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { PokeCardComponent } from './poke-card/poke-card.component';
+import { PokemonNumberPipe } from './custom-pipes/pokemon-number.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PokeListComponent,
-    PokeCardComponent
+    PokeCardComponent,
+    PokemonNumberPipe
   ],
   imports: [
     BrowserModule,
