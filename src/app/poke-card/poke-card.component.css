@@ -1,5 +1,5 @@
 h2 {
-    font-weight: 100;
+    font-weight: 600;
 }
 
 .card {
@@ -9,13 +9,34 @@ h2 {
     align-items: center;
     height: 90%;
     width: 200px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(214, 214, 214);
     border-radius: 10px;
     margin: 15px;
     padding: 10px;
-    box-shadow: 0px 0px 11px -3px rgb(138, 138, 138);
+    box-shadow: 0px 0px 11px 0px rgb(131, 131, 131);
+}
+
+.card:hover {
+    cursor: pointer;
+    scale: 1.1;
 }
 
 img {
     width: 150px;
+}
+
+.types-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.type-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+.type-icon {
+    width: 30px;
 }

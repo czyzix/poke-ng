@@ -1,10 +1,23 @@
-<!-- <div class="card" [ngStyle]="{ 'background': getBackgroundColor() }"> for 2color version-->
-<div class="card" [style.background-color]="getBackgroundColor()">
+<div class="card" [ngStyle]="{ 'background': getBackgroundColor() }">
+<!-- <div class="card" [style.background-color]="getBackgroundColor()"> -->
     <h2>{{ pokemonFullData.name | titlecase }}</h2>
     <p>{{ pokemonFullData.id | pokemonNumber }}</p>
     <img [src]="pokemonFullData.sprites.other['official-artwork'].front_default" alt="pokemon">
-    <div class="types"> Types:
-        <p>{{ pokemonFullData.types[0].type.name }}</p>
-        <p *ngIf="pokemonFullData.types.length > 1">{{ pokemonFullData.types[1].type.name }}</p>
+    <b>Types:</b>
+    <div class="types-container"> 
+        <span class="type-container">
+            <img class="type-icon"
+            [src]="'assets/imgs/pokemon-types-icons/' + pokemonFullData.types[0].type.name + '_icon_SwSh.png'" 
+            [alt]="pokemonFullData.types[0].type.name"
+            >
+            <p>{{ pokemonFullData.types[0].type.name }}</p>
+        </span>
+        <span *ngIf="pokemonFullData.types.length > 1" class="type-container">
+            <img class="type-icon"
+            [src]="'assets/imgs/pokemon-types-icons/' + pokemonFullData.types[1].type.name + '_icon_SwSh.png'" 
+            [alt]="pokemonFullData.types[1].type.name"
+            >
+            <p>{{ pokemonFullData.types[1].type.name }}</p>
+        </span>
     </div>
 </div>
