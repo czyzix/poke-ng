@@ -1,9 +1,9 @@
 .list-container {
-    margin: 0 auto;
+    margin: 100px auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1380px;
+    max-width: 1000px;
 }
 
 .pokemon-grid {
