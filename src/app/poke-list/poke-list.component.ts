@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { forkJoin } from 'rxjs';
 import { PokeDataService } from '../services/poke-data.service';
 
 @Component({
@@ -16,13 +17,16 @@ export class PokeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokeDataService.getPokemonData()
-      .subscribe((response: any) => {response.results.forEach((result: any) => {
-        this.pokeDataService.getBasicPokemonData(result.name)
-          .subscribe((uniqResponse: any) => {
-            this.pokemons.push(uniqResponse);
-            
-          })
-      })})
+      .subscribe((response: any) => {
+        const requests = response.results.map((result: any) =>
+          this.pokeDataService.getBasicPokemonData(result.name)
+        );
+
+        forkJoin(requests).subscribe((uniqResponses: any) => {
+          this.pokemons = uniqResponses.sort((a: any, b: any) => a.id - b.id);
+        });
+      });
   }
 
+  // We use forkJoin to combine multiple observables into a single observable that emits an array of responses when all requests complete.
 }
