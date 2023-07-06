@@ -15,6 +15,8 @@ export class PokeListComponent implements OnInit {
     private pokeDataService: PokeDataService
   ) {}
 
+  //TODO: unsubscribe observable onDestroy
+
   ngOnInit(): void {
     this.pokeDataService.getPokemonData()
       .subscribe((response: any) => {
