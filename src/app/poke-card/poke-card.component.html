@@ -2,7 +2,9 @@
 <!-- <div class="card" [style.background-color]="getBackgroundColor()"> -->
     <h2>{{ pokemonFullData.name | titlecase }}</h2>
     <p>{{ pokemonFullData.id | pokemonNumber }}</p>
-    <img [src]="pokemonFullData.sprites.other['official-artwork'].front_default" alt="pokemon">
+    <img [src]="pokemonFullData.sprites.other['official-artwork'].front_default"
+        [alt]="pokemonFullData.name + 'image'"
+        [title]="pokemonFullData.name + ' artwork'">
     <b>Types:</b>
     <div class="types-container"> 
         <span class="type-container">
