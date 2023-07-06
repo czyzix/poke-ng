@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { PokeCardComponent } from './poke-card/poke-card.component';
 import { PokemonNumberPipe } from './custom-pipes/pokemon-number.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,13 @@ import { PokemonNumberPipe } from './custom-pipes/pokemon-number.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'pokedex', component: PokeListComponent },
+      { path: 'about', redirectTo: 'pokedex', pathMatch: 'full'},
+      { path: '', redirectTo: 'pokedex', pathMatch: 'full'},
+      { path: '**', redirectTo: 'pokedex', pathMatch: 'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
